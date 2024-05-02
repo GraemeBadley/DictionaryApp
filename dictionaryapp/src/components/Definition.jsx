@@ -18,8 +18,8 @@ function Definition({ meaning }) {
         return acc;
     }, {});
 
-    const synonyms = [...new Set(meaning.synonyms.concat(separatedDefinitions.synonyms))];
-    const antonyms = [...new Set(meaning.antonyms.concat(separatedDefinitions.antonyms))];
+    const synonyms = [...new Set(meaning.synonyms.concat(...separatedDefinitions.synonyms))];
+    const antonyms = [...new Set(meaning.antonyms.concat(...separatedDefinitions.antonyms))];
 
     return (
         <div className="meaning">
@@ -27,27 +27,15 @@ function Definition({ meaning }) {
                 <h2>{meaning.partOfSpeech}</h2>
                 <hr />
             </div>
-            <div class="definition">
+            <div className="definition">
                 <h3>Meaning</h3>
                 <ul>
-                    {separatedDefinitions.meanings.map(element => 
-                        <Meaning meaning={element} />
+                    {separatedDefinitions.meanings.map((element, index) => 
+                        <Meaning meaning={element} key={index} />
                     )}
                 </ul>
             </div>
-            {synonyms.length > 0 && (
-                <div class="similarity">
-                    <h3>Synonyms</h3>
-                    <p>
-                    {synonyms.map((element, index) => (
-                        <>
-                            {element}
-                            {index !== synonyms.length - 1 && ", "}
-                        </>
-                    ))}
-                    </p>
-                </div>
-            )}
+            <Similarity title="Synonyms" list={synonyms} />
             <Similarity title="Antonyms" list={antonyms} />
         </div>
     );

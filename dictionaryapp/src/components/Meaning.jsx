@@ -1,7 +1,7 @@
-function Meaning({ meaning }) {
+function Meaning({ meaning, key }) {
     return (
         <div className="defAndExample">
-            <li>{capitalizeFirstLetter(meaning.definition)}</li>
+            <li key={key}>{capitalizeFirstLetter(meaning.definition)}</li>
             {meaning.example &&
                 <p>"{capitalizeFirstLetter(meaning.example)}"</p>
             }

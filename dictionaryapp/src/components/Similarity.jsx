@@ -4,7 +4,7 @@ function Similarity({ title, list }) {
     return (
         <>
             {list.length > 0 && (
-                <div class="similarity">
+                <div className="similarity">
                     <h3>{title}</h3>
                     <p>
                     {list.map((element, index) => (
