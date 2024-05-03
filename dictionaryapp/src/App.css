@@ -1,3 +1,50 @@
+/*
+    CSS Reset
+*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+img, picture, video, canvas, svg{
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+  }
+
+/* ------------------------------------ */
+
+/*
+    Main Content CSS
+*/
+
+.main-content{
+    max-width: 737px;
+    margin: 58px auto;
+}
+
+/* ------------------------------------ */
+
+/*
+    SearchBar
+*/
+
+.search{
+    border-style: none;
+    border-radius: 16px;
+    background-color: #f4f4f4;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px 24px;
+    margin: 45px 0px;
+}
+/* ------------------------------------ */
+
+/*
+    Lower-body Components
+*/
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -151,3 +198,5 @@ body {
     color: #a445ed;
     margin: 0;
 }
+
+/*  ----------------------- */
