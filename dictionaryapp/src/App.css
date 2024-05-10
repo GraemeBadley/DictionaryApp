@@ -52,13 +52,13 @@ body {
 .layout {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: flex-start;
 }
 
 .content {
-    height: 826px;
     width: 737px;
+    margin-bottom: 50px;
 }
 
 .header {

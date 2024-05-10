@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import './App.css';
 import Definition from './components/Content';
+import Search from './components/Search';
 
-function Dictionary({ definition }) {
+function Dictionary() {
+  const [definitions, setDefinitions] = useState(null);
+
   return (
-    <div className="layout">
-      <Definition definition={definition} />
+    <div className="main-content">
+      <Search setDefinitions={setDefinitions} />
+      <div className="layout">
+        {definitions != null && definitions.map((definition) => (
+          <Definition definition={definition} />
+        ))}
+      </div>
     </div>
   );
 }

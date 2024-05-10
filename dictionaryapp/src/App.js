@@ -1,6 +1,5 @@
 import './App.css';
 import Dictionary from './Dictionary';
-import Search from './components/Search';
 import React from 'react';
 function App() {
     var definition = {
@@ -69,10 +68,7 @@ function App() {
         ]
     };
     return (
-        <div className="main-content">
-            <Search />
-            < Dictionary definition = { definition }/ > 
-        </div>
+        < Dictionary definition = { definition }/ > 
         );
     }
 

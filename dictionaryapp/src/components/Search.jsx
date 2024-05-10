@@ -1,13 +1,26 @@
 import React from "react";
 
-function Search(){
+function Search({ setDefinitions }){
+    
+    async function handleChange(e){
+        const word = e.target.value;
+        setDefinitions(await getDefiniton(word));
+    }
+
     return(
-        <input type="search" placeholder="Type in word" className="search"></input>
+        <input type="search" placeholder="Type in word" className="search" onChange={handleChange}></input>
     )
 }
 
-function handleChange(e){
-
+const getDefiniton = async (word) => {
+    try{
+        const response = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + word);
+        if (response.ok){
+            return await response.json();
+        }
+    }catch(error){
+        return null;
+    }
 }
 
-export default Search
+export default Search;
