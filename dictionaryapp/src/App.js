@@ -15,7 +15,7 @@ function App() {
             },
             {
                 "text": "/ˈkibɔɹd/",
-                "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3",
+                "audio": "//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3",
                 "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=1755168",
                 "license": {
                     "name": "BY-SA 3.0",
