@@ -1,6 +1,6 @@
 import './App.css';
 import Dictionary from './Dictionary';
-
+import React from 'react';
 function App() {
     var definition = {
         "word": "keyboard",
@@ -67,8 +67,9 @@ function App() {
             "https://en.wiktionary.org/wiki/keyboard"
         ]
     };
-    return ( < Dictionary definition = { definition }
-        / > );
+    return (
+        < Dictionary definition = { definition }/ > 
+        );
     }
 
     export default App;
