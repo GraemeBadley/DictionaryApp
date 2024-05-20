@@ -1,18 +1,16 @@
+import Header from "./Header";
 import Definition from "./Definition";
+import Footer from "./Footer";
 
 function Content({ definition }) {
     return (
         <div className="content">
-            <div className="header">
-                <div className="title">
-                    <h1>{definition.word}</h1>
-                    <p>{definition.phonetic}</p>
-                </div>
-                <button class="play-button"></button>
-            </div>
+            <Header definition={definition} />
             {definition.meanings.map((meaning, index) =>
                 <Definition meaning={meaning} key={index} />
             )}
+            <Footer sourceUrls={definition.sourceUrls} />
+            <hr className="content-line" />
         </div>
     );
 }

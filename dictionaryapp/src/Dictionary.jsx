@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Definition from './components/Content';
 import Search from './components/Search';
+import NoDefinition from './components/NoDefinition';
 
 function Dictionary() {
   const [definitions, setDefinitions] = useState(null);
@@ -10,7 +11,10 @@ function Dictionary() {
     <div className="main-content">
       <Search setDefinitions={setDefinitions} />
       <div className="layout">
-        {definitions != null && definitions.map((definition) => (
+        {(!definitions || definitions.length === 0) &&
+          <NoDefinition />
+        }
+        {definitions && definitions.map((definition) => (
           <Definition definition={definition} />
         ))}
       </div>
