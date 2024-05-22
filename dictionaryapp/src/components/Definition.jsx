@@ -2,7 +2,7 @@ import Meaning from "./Meaning";
 import React from "react";
 import Similarity from "./Similarity";
 
-function Definition({ meaning }) {
+function Definition({ meaning, setDefinitions }) {
     const separatedDefinitions = meaning.definitions.reduce((acc, obj) => {
         acc["meanings"] = acc["meanings"] || [];
         acc["synonyms"] = acc["synonyms"] || [];
@@ -35,8 +35,8 @@ function Definition({ meaning }) {
                     )}
                 </ul>
             </div>
-            <Similarity title="Synonyms" list={synonyms} />
-            <Similarity title="Antonyms" list={antonyms} />
+            <Similarity title="Synonyms" list={synonyms} setDefinitions={setDefinitions} />
+            <Similarity title="Antonyms" list={antonyms} setDefinitions={setDefinitions}/>
         </div>
     );
 }
