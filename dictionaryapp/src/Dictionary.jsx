@@ -3,12 +3,14 @@ import './App.css';
 import Definition from './components/Content';
 import Search from './components/Search';
 import NoDefinition from './components/NoDefinition';
+import MainHeader from './components/MainHeader';
 
 function Dictionary() {
   const [definitions, setDefinitions] = useState(null);
 
   return (
-    <div className="main-content">
+    <div className="main-content"> 
+      <MainHeader></MainHeader>
       <Search setDefinitions={setDefinitions} />
       <div className="layout">
         {(!definitions || definitions.length === 0) &&

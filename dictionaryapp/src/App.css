@@ -273,3 +273,28 @@ hr {
     background-image: url(./img/sad-face.png);
     margin-bottom: 20px;
 }
+/* *************************************** */
+/* Main page header*/
+.main-header{
+    width: 100%;
+    display: flex;
+}
+
+/* *************************************** */
+/* Font drop down menu */
+.icon{
+    background: url(../public/assets/images/icon-arrow-down.svg) no-repeat;
+    height: 8px;
+    width: 14px;
+    display: inline-block;
+}
+
+.font-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    width: 74px;
+    height: 24px;
+    font-family: "lora";
+}
